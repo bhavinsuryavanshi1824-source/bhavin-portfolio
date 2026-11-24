@@ -27,7 +27,7 @@ If you haven't created a GitHub repository yet:
 1. Go to [github.com/new](https://github.com/new) and create a new repository (e.g., `bhavin-portfolio`).
 2. Run the following commands in this directory:
    ```bash
-   git remote add origin https://github.com/<your-username>/bhavin-portfolio.git
+   git remote add origin https://github.com/bhavinsuryavanshi1824-source/bhavin-portfolio.git
    git branch -M main
    git push -u origin main
    ```

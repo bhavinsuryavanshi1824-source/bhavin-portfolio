@@ -10,7 +10,7 @@ export const personalInfo: PersonalInfo = {
   email: "bhavinsuryavanshi1824@gmail.com",
   phone: "+91 8959826991",
   linkedInUrl: "https://linkedin.com/in/bhavinsuryavanshi-55b031444",
-  githubUrl: "https://github.com/bhavinsuryavanshi",
+  githubUrl: "https://github.com/bhavinsuryavanshi1824-source",
   isAvailableForHire: true,
   availabilityText: "Available for Internships & AI Engineering Roles (2025/2026)",
   education: {
@@ -332,8 +332,8 @@ export const certifications: Certification[] = [
 ];
 
 export const githubProfileData = {
-  username: "bhavinsuryavanshi",
-  profileUrl: "https://github.com/bhavinsuryavanshi",
+  username: "bhavinsuryavanshi1824-source",
+  profileUrl: "https://github.com/bhavinsuryavanshi1824-source",
   bio: "AI Engineer & Full-Stack Developer specializing in Generative AI, LangGraph, and Cybersecurity principles.",
   location: "Bhopal, India",
   publicReposCount: "5+",
