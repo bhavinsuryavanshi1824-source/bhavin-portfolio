@@ -11,8 +11,8 @@ export const personalInfo: PersonalInfo = {
   phone: "+91 8959826991",
   linkedInUrl: "https://linkedin.com/in/bhavinsuryavanshi-55b031444",
   githubUrl: "https://github.com/bhavinsuryavanshi1824-source",
-  isAvailableForHire: true,
-  availabilityText: "Available for Internships & AI Engineering Roles (2025/2026)",
+  isAvailableForHire: false,
+  availabilityText: "",
   education: {
     degree: "B.Tech Computer Science Engineering",
     specialization: "IoT & Cybersecurity",

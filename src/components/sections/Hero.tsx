@@ -27,7 +27,7 @@ export function Hero() {
       className="relative min-h-[92vh] flex flex-col justify-center pt-24 sm:pt-28 pb-16 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        {/* Top Badges / Availability Bar with Staggered Entrance */}
+        {/* Top Badges / Identity Bar */}
         <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-8 transition-all duration-700">
           {/* Identity Tag */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-md hover:border-violet-500/40 transition-colors">
@@ -36,17 +36,6 @@ export function Hero() {
               AI Engineer &amp; Full-Stack Developer
             </span>
           </div>
-
-          {/* Availability Indicator */}
-          {personalInfo.isAvailableForHire && (
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-xs font-medium text-emerald-300 shadow-sm shadow-emerald-500/10">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span>{personalInfo.availabilityText}</span>
-            </div>
-          )}
         </div>
 
         {/* Main Hero Typography */}
