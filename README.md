@@ -7,6 +7,45 @@ A production-ready, dark-themed personal portfolio website engineered with Next.
 
 ---
 
+## 🌐 100% Free Deployment on Render (Static Site)
+
+This website is configured for **Render's Free Static Site Hosting** using Next.js Static Export (`output: "export"`). It does not require a paid web service, server runtime, or subscription.
+
+### Render Configuration Summary
+
+| Setting | Value |
+| :--- | :--- |
+| **Service Type** | **Static Site** (Free forever) |
+| **Build Command** | `npm install && npm run build` |
+| **Publish Directory** | `out` |
+| **Branch** | `main` |
+
+### Step-by-Step GitHub & Render Deployment Guide
+
+#### 1. Push to GitHub
+If you haven't created a GitHub repository yet:
+1. Go to [github.com/new](https://github.com/new) and create a new repository (e.g., `bhavin-portfolio`).
+2. Run the following commands in this directory:
+   ```bash
+   git remote add origin https://github.com/<your-username>/bhavin-portfolio.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+#### 2. Deploy on Render
+1. Open [https://render.com/](https://render.com/) and sign in (or create a free account).
+2. Click **New +** in the top right corner and select **Static Site**.
+3. Connect your GitHub account and select your `bhavin-portfolio` repository.
+4. Fill in the deployment settings:
+   - **Name:** `bhavin-suryavanshi` (or your preferred site name)
+   - **Branch:** `main`
+   - **Build Command:** `npm install && npm run build`
+   - **Publish Directory:** `out`
+5. Click **Create Static Site**.
+6. Render will automatically run the build, export the static files to `out`, and provide you with a live URL (e.g., `https://bhavin-suryavanshi.onrender.com`).
+
+---
+
 ## 🌟 Highlights & Key Features
 
 - **Editorial Dark Aesthetic:** Deep obsidian (`#07090E`), elevated card surfaces (`#0E131F`), electric violet (`#8B5CF6`) and cyber cyan (`#38BDF8`) accents.
@@ -25,12 +64,12 @@ A production-ready, dark-themed personal portfolio website engineered with Next.
 
 | Layer | Technologies |
 | :--- | :--- |
-| **Framework** | Next.js 14 (App Router) |
+| **Framework** | Next.js 14 (App Router) with Static Export (`output: "export"`) |
 | **Language** | TypeScript (Strict Mode) |
 | **Styling** | Tailwind CSS with custom theme extensions |
 | **Icons** | Lucide React |
 | **Animations** | Framer Motion & CSS custom keyframes |
-| **Build Output** | Fully Static Pre-rendered SSG |
+| **Hosting Compatibility** | Render Free Static Site, Vercel, Netlify, GitHub Pages |
 
 ---
 
@@ -38,6 +77,11 @@ A production-ready, dark-themed personal portfolio website engineered with Next.
 
 ```
 d:\portfolio website\
+├── out/                             # Generated static website for Render
+│   ├── index.html                   # Pre-rendered static landing page
+│   ├── 404.html                     # Pre-rendered error page
+│   ├── resume/                      # Static resume assets
+│   └── _next/                       # Static JS, CSS, and media assets
 ├── public/
 │   └── resume/
 │       └── Bhavin_Suryavanshi_Resume.txt
@@ -72,38 +116,25 @@ d:\portfolio website\
 ├── package.json
 ├── tsconfig.json
 ├── tailwind.config.ts
-└── next.config.mjs
+├── next.config.mjs                  # Configured with output: 'export'
+└── .gitignore
 ```
 
 ---
 
-## 🚀 Running Locally
+## 🚀 Local Development
 
 1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. **Start the development server:**
+2. **Start development server:**
    ```bash
    npm run dev
    ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-3. **Build for production:**
+3. **Generate Static Export (`out/`):**
    ```bash
    npm run build
    ```
-
-4. **Run the production build:**
-   ```bash
-   npm start
-   ```
-
----
-
-## 🌐 Deploying
-
-This portfolio is configured for zero-friction deployment to Vercel, Netlify, or any static hosting provider:
-- **Vercel:** Connect your GitHub repository and click Deploy (framework preset automatically detected as Next.js).
-- **Netlify:** Build command: `npm run build`, Publish directory: `.next`.
