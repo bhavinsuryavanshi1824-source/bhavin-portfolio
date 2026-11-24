@@ -101,6 +101,7 @@ export interface Certification {
   skillsLearned: string[];
   category: "AI" | "Cybersecurity" | "FullStack";
   badgeIcon: string;
+  imageSrc?: string;
 }
 
 export interface GitHubRepo {

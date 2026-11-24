@@ -12,7 +12,8 @@ import {
   Terminal, 
   Sparkles, 
   ShieldCheck, 
-  Cpu 
+  Cpu,
+  FileText
 } from "lucide-react";
 import { ResumeModal } from "@/components/ui/ResumeModal";
 
@@ -25,11 +26,11 @@ export function Hero() {
       aria-label="Introduction"
       className="relative min-h-[92vh] flex flex-col justify-center pt-24 sm:pt-28 pb-16 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        {/* Top Badges / Availability Bar */}
-        <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-8 animate-in fade-in duration-700">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        {/* Top Badges / Availability Bar with Staggered Entrance */}
+        <div className="flex flex-wrap items-center gap-3 mb-6 sm:mb-8 transition-all duration-700">
           {/* Identity Tag */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-md hover:border-violet-500/40 transition-colors">
             <Terminal className="w-3.5 h-3.5 text-violet-400" />
             <span className="text-xs font-mono font-medium text-slate-300">
               AI Engineer &amp; Full-Stack Developer
@@ -38,7 +39,7 @@ export function Hero() {
 
           {/* Availability Indicator */}
           {personalInfo.isAvailableForHire && (
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-300">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-xs font-medium text-emerald-300 shadow-sm shadow-emerald-500/10">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -50,16 +51,16 @@ export function Hero() {
 
         {/* Main Hero Typography */}
         <div className="space-y-4 sm:space-y-6 max-w-4xl">
-          {/* Name Display */}
+          {/* Name Display with Editorial Lighting */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white uppercase font-sans">
-            <span className="block text-slate-100">BHAVIN</span>
+            <span className="block text-slate-100 drop-shadow-sm">BHAVIN</span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-indigo-300 to-cyan-400">
               SURYAVANSHI
             </span>
           </h1>
 
           {/* Punchy Tagline */}
-          <div className="border-l-2 border-violet-500/40 pl-4 sm:pl-6 py-1">
+          <div className="border-l-2 border-violet-500/50 pl-4 sm:pl-6 py-1">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-100 leading-snug">
               &ldquo;{personalInfo.tagline}&rdquo;
             </h2>
@@ -74,19 +75,19 @@ export function Hero() {
           {/* Primary CTA: Explore Projects */}
           <a
             href="#projects"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 shadow-lg shadow-violet-600/25 transition-all duration-200 group"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 shadow-lg shadow-violet-600/30 hover:shadow-violet-600/50 hover:scale-[1.02] transition-all duration-200 group"
           >
             <span>Explore Projects</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
           </a>
 
-          {/* Secondary CTA: Download Resume */}
+          {/* Secondary CTA: View & Download Resume */}
           <button
             onClick={() => setResumeOpen(true)}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] hover:border-white/[0.2] transition-all duration-200"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] hover:border-violet-500/40 hover:scale-[1.02] transition-all duration-200 group"
           >
-            <Download className="w-4 h-4 text-violet-400" />
-            <span>Download Resume</span>
+            <FileText className="w-4 h-4 text-violet-400 group-hover:text-violet-300 transition-colors" />
+            <span>Curriculum Vitae</span>
           </button>
 
           {/* Tertiary CTA: Contact Me */}
@@ -104,7 +105,7 @@ export function Hero() {
               href={personalInfo.linkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white transition"
+              className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:border-violet-500/30 text-slate-300 hover:text-white transition hover:-translate-y-0.5"
               aria-label="LinkedIn profile"
             >
               <Linkedin className="w-4 h-4" />
@@ -114,7 +115,7 @@ export function Hero() {
               href={personalInfo.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white transition"
+              className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:border-violet-500/30 text-slate-300 hover:text-white transition hover:-translate-y-0.5"
               aria-label="GitHub profile"
             >
               <Github className="w-4 h-4" />
@@ -122,7 +123,7 @@ export function Hero() {
 
             <a
               href={`mailto:${personalInfo.email}`}
-              className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white transition"
+              className="p-3 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] hover:border-cyan-500/30 text-slate-300 hover:text-white transition hover:-translate-y-0.5"
               aria-label="Send direct email"
             >
               <Mail className="w-4 h-4" />
@@ -130,10 +131,10 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Feature Pills under Hero */}
+        {/* Feature Interactive Pills under Hero */}
         <div className="mt-14 pt-8 border-t border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-violet-500/25 transition-colors">
+            <div className="w-9 h-9 rounded-lg bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shrink-0">
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
@@ -142,8 +143,8 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-cyan-500/25 transition-colors">
+            <div className="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
               <Cpu className="w-4 h-4" />
             </div>
             <div>
@@ -152,8 +153,8 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-emerald-500/25 transition-colors">
+            <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
               <ShieldCheck className="w-4 h-4" />
             </div>
             <div>
@@ -162,13 +163,13 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+          <div className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/[0.04] hover:border-purple-500/25 transition-colors">
+            <div className="w-9 h-9 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
               <Terminal className="w-4 h-4" />
             </div>
             <div>
               <div className="text-xs font-semibold text-slate-200">LNCT Bhopal</div>
-              <div className="text-[11px] text-slate-400">B.Tech IoT &amp; Cyber (23-27)</div>
+              <div className="text-[11px] text-slate-400">IoT &amp; Cyber (2023–27)</div>
             </div>
           </div>
         </div>
@@ -180,7 +181,7 @@ export function Hero() {
             className="group inline-flex flex-col items-center text-slate-400 hover:text-white transition"
             aria-label="Scroll down to About section"
           >
-            <span className="text-[10px] font-mono tracking-widest uppercase mb-1">Explore</span>
+            <span className="text-[10px] font-mono tracking-widest uppercase mb-1">Scroll Down</span>
             <ChevronDown className="w-4 h-4 animate-bounce text-violet-400" />
           </a>
         </div>

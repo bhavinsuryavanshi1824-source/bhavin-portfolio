@@ -3,7 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { AmbientBackground } from "@/components/ui/AmbientBackground";
+import { InteractiveBackground } from "@/components/ui/InteractiveBackground";
 import { personalInfo } from "@/data/portfolioData";
 
 const inter = Inter({
@@ -71,7 +71,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} dark`}>
       <body className="min-h-screen bg-[#07090e] text-slate-100 antialiased selection:bg-violet-600/30 selection:text-white">
-        <AmbientBackground />
+        <InteractiveBackground />
         <Navbar />
         <main id="main-content" className="relative z-10 flex flex-col">
           {children}

@@ -44,7 +44,7 @@ export function Skills() {
     <section
       id="skills"
       aria-label="Technical Skills"
-      className="relative py-20 sm:py-28 border-t border-white/[0.06] bg-[#07090e]"
+      className="relative py-20 sm:py-28 border-t border-white/[0.06] bg-[#07090e]/70 backdrop-blur-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -67,7 +67,7 @@ export function Skills() {
               onClick={() => setSelectedCategory("all")}
               className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
                 selectedCategory === "all"
-                  ? "bg-violet-600 text-white shadow-sm"
+                  ? "bg-violet-600 text-white shadow-sm font-semibold"
                   : "text-slate-400 hover:text-white hover:bg-white/[0.05]"
               }`}
             >
@@ -79,7 +79,7 @@ export function Skills() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
                   selectedCategory === cat.id
-                    ? "bg-violet-600 text-white shadow-sm"
+                    ? "bg-violet-600 text-white shadow-sm font-semibold"
                     : "text-slate-400 hover:text-white hover:bg-white/[0.05]"
                 }`}
               >
@@ -94,13 +94,13 @@ export function Skills() {
           {filteredCategories.map((cat) => (
             <div
               key={cat.id}
-              className="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.07] hover:border-violet-500/30 hover:bg-white/[0.03] transition-all duration-300 flex flex-col justify-between"
+              className="group p-6 rounded-2xl bg-white/[0.02] border border-white/[0.07] hover:border-violet-500/40 hover:bg-white/[0.04] transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-violet-900/10 hover:-translate-y-1"
             >
               <div>
                 {/* Category Header */}
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-violet-500/20 transition-colors">
+                    <div className="p-2 rounded-lg bg-white/[0.04] border border-white/[0.06] group-hover:border-violet-500/30 transition-colors">
                       {getCategoryIcon(cat.id)}
                     </div>
                     <h3 className="text-base font-bold text-white group-hover:text-violet-200 transition">
@@ -123,8 +123,8 @@ export function Skills() {
                       key={skill.name}
                       className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                         skill.highlight
-                          ? "bg-violet-500/10 text-violet-200 border border-violet-500/30 hover:border-violet-400/50 shadow-sm shadow-violet-500/5"
-                          : "bg-white/[0.03] text-slate-300 border border-white/[0.06] hover:border-white/[0.15]"
+                          ? "bg-violet-500/10 text-violet-200 border border-violet-500/30 hover:border-violet-400/60 shadow-sm shadow-violet-500/5 hover:scale-105"
+                          : "bg-white/[0.03] text-slate-300 border border-white/[0.06] hover:border-white/[0.15] hover:scale-105"
                       }`}
                     >
                       {skill.highlight && (

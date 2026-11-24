@@ -23,6 +23,19 @@ export function FeaturedProjects() {
   const [filter, setFilter] = useState<string>("all");
   const [selectedCaseStudyId, setSelectedCaseStudyId] = useState<string | null>(null);
 
+  const handleCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    card.style.transform = `perspective(1000px) rotateX(${-y / 35}deg) rotateY(${x / 35}deg) scale3d(1.01, 1.01, 1.01)`;
+  };
+
+  const handleCardMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.currentTarget.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  };
+
   const filteredProjects = projects.filter((project) => {
     if (filter === "all") return true;
     if (filter === "flagship") return project.isFlagship;
@@ -38,7 +51,7 @@ export function FeaturedProjects() {
     <section
       id="projects"
       aria-label="Featured Engineering Projects"
-      className="relative py-20 sm:py-28 border-t border-white/[0.06] bg-[#07090e]"
+      className="relative py-20 sm:py-28 border-t border-white/[0.06] bg-[#07090e]/75 backdrop-blur-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -69,7 +82,7 @@ export function FeaturedProjects() {
                 onClick={() => setFilter(tab.key)}
                 className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
                   filter === tab.key
-                    ? "bg-violet-600 text-white shadow-sm"
+                    ? "bg-violet-600 text-white shadow-sm font-semibold"
                     : "text-slate-400 hover:text-white hover:bg-white/[0.05]"
                 }`}
               >
@@ -79,13 +92,17 @@ export function FeaturedProjects() {
           </div>
         </div>
 
-        {/* FLAGSHIP SHOWCASE: SecureScope AI */}
+        {/* FLAGSHIP SHOWCASE: SecureScope AI with 3D Tilt */}
         {flagshipProject && (filter === "all" || filter === "flagship" || filter === "cybersecurity") && (
-          <div className="mb-14 rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-violet-500/30 p-6 sm:p-8 md:p-10 relative overflow-hidden shadow-2xl shadow-violet-900/10">
+          <div 
+            onMouseMove={handleCardMouseMove}
+            onMouseLeave={handleCardMouseLeave}
+            className="mb-14 rounded-3xl bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-violet-500/30 p-6 sm:p-8 md:p-10 relative overflow-hidden shadow-2xl shadow-violet-900/10 transition-transform duration-200 will-change-transform"
+          >
             {/* Ambient Corner Glow */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-violet-600/10 blur-3xl rounded-full pointer-events-none" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
               {/* Left Column: Flagship Details */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-wrap items-center gap-2.5">
@@ -135,7 +152,7 @@ export function FeaturedProjects() {
                     {flagshipProject.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-200 border border-white/[0.08] font-mono"
+                        className="text-xs px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-200 border border-white/[0.08] font-mono hover:border-violet-500/30 transition-colors"
                       >
                         {tech}
                       </span>
@@ -147,7 +164,7 @@ export function FeaturedProjects() {
                 <div className="pt-4 flex flex-wrap items-center gap-3">
                   <button
                     onClick={() => setSelectedCaseStudyId(flagshipProject.id)}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-violet-600 hover:bg-violet-500 shadow-lg shadow-violet-600/25 transition"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-violet-600 hover:bg-violet-500 shadow-lg shadow-violet-600/25 hover:shadow-violet-600/40 transition hover:scale-[1.02]"
                   >
                     <BookOpen className="w-4 h-4" />
                     <span>View Detailed Case Study</span>
@@ -158,7 +175,7 @@ export function FeaturedProjects() {
                       href={flagshipProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] transition"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] hover:border-white/[0.2] transition hover:scale-[1.02]"
                     >
                       <Github className="w-4 h-4" />
                       <span>GitHub Repository</span>
@@ -173,7 +190,7 @@ export function FeaturedProjects() {
               </div>
 
               {/* Right Column: Architectural Pipeline Card */}
-              <div className="lg:col-span-5 bg-[#0b0f17] border border-white/[0.08] rounded-2xl p-5 sm:p-6 space-y-4">
+              <div className="lg:col-span-5 bg-[#0b0f17] border border-white/[0.08] rounded-2xl p-5 sm:p-6 space-y-4 shadow-xl">
                 <div className="flex items-center justify-between border-b border-white/[0.06] pb-3">
                   <div className="flex items-center gap-2">
                     <Terminal className="w-4 h-4 text-violet-400" />
@@ -186,7 +203,7 @@ export function FeaturedProjects() {
 
                 {/* Pipeline Steps Preview */}
                 <div className="space-y-2.5 font-mono text-xs">
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3">
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3 hover:border-violet-500/25 transition-colors">
                     <span className="w-5 h-5 rounded-full bg-violet-600/30 text-violet-300 text-[11px] flex items-center justify-center font-bold">1</span>
                     <div>
                       <div className="text-white font-medium">Target Input &amp; Demo Trigger</div>
@@ -194,7 +211,7 @@ export function FeaturedProjects() {
                     </div>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3">
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3 hover:border-cyan-500/25 transition-colors">
                     <span className="w-5 h-5 rounded-full bg-cyan-600/30 text-cyan-300 text-[11px] flex items-center justify-center font-bold">2</span>
                     <div>
                       <div className="text-white font-medium">FastAPI Endpoint Dispatcher</div>
@@ -202,7 +219,7 @@ export function FeaturedProjects() {
                     </div>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3">
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3 hover:border-indigo-500/25 transition-colors">
                     <span className="w-5 h-5 rounded-full bg-indigo-600/30 text-indigo-300 text-[11px] flex items-center justify-center font-bold">3</span>
                     <div>
                       <div className="text-white font-medium">Rule-Based Risk Engine</div>
@@ -210,7 +227,7 @@ export function FeaturedProjects() {
                     </div>
                   </div>
 
-                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3">
+                  <div className="p-2.5 rounded-lg bg-white/[0.02] border border-white/[0.05] flex items-center gap-3 hover:border-emerald-500/25 transition-colors">
                     <span className="w-5 h-5 rounded-full bg-emerald-600/30 text-emerald-300 text-[11px] flex items-center justify-center font-bold">4</span>
                     <div>
                       <div className="text-white font-medium">SQLite Persistence &amp; CSV Exporter</div>
@@ -233,14 +250,16 @@ export function FeaturedProjects() {
           </div>
         )}
 
-        {/* OTHER FEATURED PROJECTS GRID */}
+        {/* OTHER FEATURED PROJECTS GRID with 3D Tilt */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredProjects
             .filter((p) => p.id !== "securescope-ai")
             .map((project) => (
               <div
                 key={project.id}
-                className="group p-6 sm:p-7 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-violet-500/30 hover:bg-white/[0.03] transition-all duration-300 flex flex-col justify-between"
+                onMouseMove={handleCardMouseMove}
+                onMouseLeave={handleCardMouseLeave}
+                className="group p-6 sm:p-7 rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-violet-500/40 hover:bg-white/[0.03] transition-all duration-200 flex flex-col justify-between shadow-lg hover:shadow-violet-900/10 will-change-transform"
               >
                 <div className="space-y-4">
                   {/* Category and Tags */}
@@ -289,7 +308,7 @@ export function FeaturedProjects() {
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.03] text-slate-300 border border-white/[0.06]"
+                        className="text-[11px] font-mono px-2 py-0.5 rounded bg-white/[0.03] text-slate-300 border border-white/[0.06] group-hover:border-white/[0.12] transition"
                       >
                         {tech}
                       </span>
@@ -312,7 +331,7 @@ export function FeaturedProjects() {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-violet-400 hover:text-violet-300 group-hover:translate-x-0.5 transition"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-violet-400 hover:text-violet-300 group-hover:translate-x-1 transition"
                     >
                       <span>Code Repository</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
