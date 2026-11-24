@@ -1,0 +1,30 @@
+BHAVIN SURYAVANSHI
+AI Engineer | Full-Stack Developer | Cybersecurity Enthusiast
+Bhopal, India | bhavinsuryavanshi1824@gmail.com | +91 8959826991
+LinkedIn: https://linkedin.com/in/bhavinsuryavanshi-55b031444
+GitHub: https://github.com/bhavinsuryavanshi
+
+EDUCATION:
+B.Tech in Computer Science Engineering (IoT & Cybersecurity)
+Lakshmi Narain College of Technology (LNCT), Bhopal (2023 - 2027)
+
+TECHNICAL COMPETENCIES:
+- Languages: Python, JavaScript, TypeScript, Java Basics, HTML, CSS
+- Generative AI & LLMs: Agentic AI, LangGraph, Groq API, Llama 3.3 70B, Prompt Engineering, Vector Embeddings
+- Frameworks & Backends: React.js, FastAPI, Django, NumPy, Pandas
+- Databases: SQL, Firebase, Supabase, SQLite
+- Cybersecurity: Network Security, Vulnerability Assessment, OWASP Top 10, Web App Security, Cryptography Basics
+- Security Tools: Nmap, Wireshark, Burp Suite Basics, Kali Linux, Postman, Cisco Packet Tracer
+
+KEY PROJECTS:
+1. SecureScope AI: AI-Powered Cybersecurity Vulnerability Scanner & Remediation Suite (React, FastAPI, Nmap, SQLite)
+2. ResearchHub AI: Agentic Academic Research Assistant with Semantic Vector Embeddings (FastAPI, Llama 3.3 70B, Groq)
+3. Saathi: AI Mental Wellness Application (Smart India Hackathon 2025 - LangGraph, Sarvam AI, Django, Firebase)
+4. Quotes Recommendation Chatbot (Rasa NLU, Python, React.js)
+5. Smart Number Plate Detection System (Python, OpenCV, OCR)
+
+CERTIFICATIONS:
+- Introduction to Modern AI - Cisco Networking Academy (Nov 2025)
+- Junior Cybersecurity Analyst Career Path - Cisco Networking Academy (2025)
+- Cybersecurity Essentials - Cisco Networking Academy (Dec 2025)
+- Java Mastery: Beginner's Guide & Full-Stack AI Projects - Udemy (Nov 2025)

@@ -1,0 +1,348 @@
+import { PersonalInfo, SkillCategory, Project, Certification, GitHubRepo } from "@/lib/types";
+
+export const personalInfo: PersonalInfo = {
+  name: "Bhavin Suryavanshi",
+  role: "AI Engineer | Full-Stack Developer | Cybersecurity Enthusiast",
+  tagline: "Building intelligent systems. Creating meaningful digital experiences.",
+  subtitle: "AI Engineer & Full-Stack Developer passionate about Generative AI, intelligent applications, and secure software development.",
+  introduction: "I build intelligent, scalable, and user-centric applications by combining Artificial Intelligence, full-stack engineering, and cybersecurity principles. My interests include Generative AI, Agentic AI, LLM-powered applications, backend engineering, and building practical software solutions.",
+  location: "Bhopal, India",
+  email: "bhavinsuryavanshi1824@gmail.com",
+  phone: "+91 8959826991",
+  linkedInUrl: "https://linkedin.com/in/bhavinsuryavanshi-55b031444",
+  // Configurable placeholder until specific custom handle is provided:
+  githubUrl: "https://github.com/bhavinsuryavanshi",
+  isAvailableForHire: true,
+  availabilityText: "Available for Internships & AI Engineering Roles (2025/2026)",
+  education: {
+    degree: "B.Tech Computer Science Engineering",
+    specialization: "IoT & Cybersecurity",
+    institution: "Lakshmi Narain College of Technology (LNCT)",
+    location: "Bhopal, India",
+    period: "2023 – 2027",
+    highlights: [
+      "Rigorous coursework in Cybersecurity Fundamentals, IoT Architectures, Computer Networks, and Cryptography",
+      "Specialized research and practical project labs in intelligent systems and secure backend engineering",
+      "Active participant in technical hackathons including Smart India Hackathon (SIH 2025)"
+    ],
+  },
+};
+
+export const aboutNarrative = {
+  paragraph1: "I am a Computer Science undergraduate specializing in IoT and Cybersecurity, interested in building intelligent applications that solve real-world problems.",
+  paragraph2: "My development journey combines full-stack engineering, Generative AI, Agentic AI, and cybersecurity.",
+  paragraph3: "I enjoy transforming ideas into functional products, experimenting with emerging technologies, and understanding how software systems work from frontend to backend.",
+  quote: "I believe in learning by building.",
+  stats: [
+    { label: "Real-World Projects", value: "5+" },
+    { label: "Professional Certifications", value: "4" },
+    { label: "Hackathon Track", value: "SIH 2025" },
+    { label: "Code Integrity", value: "100%" },
+  ],
+  pillars: [
+    {
+      title: "Generative & Agentic AI",
+      description: "Harnessing LLM integration, multi-agent frameworks like LangGraph, vector search, and prompt engineering to construct autonomous, context-aware systems.",
+      badge: "Core Focus",
+    },
+    {
+      title: "Resilient Full-Stack Systems",
+      description: "Architecting reliable end-to-end applications using modern React, TypeScript, FastAPI, and Django with clean API contracts and performant databases.",
+      badge: "Production Ready",
+    },
+    {
+      title: "Cybersecurity & Defensibility",
+      description: "Applying secure-by-design principles, OWASP Top 10 mitigation, vulnerability assessment workflows, and network auditing tools to build hardened applications.",
+      badge: "Security Centric",
+    },
+  ],
+};
+
+export const skillCategories: SkillCategory[] = [
+  {
+    id: "programming",
+    name: "Programming",
+    description: "Core languages for systems, algorithms, and web applications",
+    iconName: "Code",
+    skills: [
+      { name: "Python", highlight: true },
+      { name: "JavaScript", highlight: true },
+      { name: "TypeScript", highlight: true },
+      { name: "Java Basics" },
+      { name: "HTML" },
+      { name: "CSS" },
+    ],
+  },
+  {
+    id: "genai",
+    name: "Generative AI & LLMs",
+    description: "Modern artificial intelligence and agentic workflows",
+    iconName: "Sparkles",
+    skills: [
+      { name: "Generative AI", highlight: true },
+      { name: "Agentic AI", highlight: true },
+      { name: "LLM Integration", highlight: true },
+      { name: "Prompt Engineering", highlight: true },
+      { name: "NLP" },
+      { name: "LangGraph", highlight: true },
+      { name: "Groq API", highlight: true },
+      { name: "Conversational AI" },
+    ],
+  },
+  {
+    id: "frameworks",
+    name: "Frameworks & Libraries",
+    description: "Modern web, API, and analytical frameworks",
+    iconName: "Layers",
+    skills: [
+      { name: "React.js", highlight: true },
+      { name: "FastAPI", highlight: true },
+      { name: "Django", highlight: true },
+      { name: "NumPy" },
+      { name: "Pandas" },
+    ],
+  },
+  {
+    id: "databases",
+    name: "Databases & Cloud",
+    description: "Persistent storage, relational schemas, and serverless data",
+    iconName: "Database",
+    skills: [
+      { name: "SQL", highlight: true },
+      { name: "NoSQL" },
+      { name: "Firebase", highlight: true },
+      { name: "Supabase" },
+    ],
+  },
+  {
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    description: "Security auditing, threat mitigation, and networking",
+    iconName: "ShieldCheck",
+    skills: [
+      { name: "Network Security", highlight: true },
+      { name: "Vulnerability Assessment", highlight: true },
+      { name: "OWASP Top 10", highlight: true },
+      { name: "Web Application Security", highlight: true },
+      { name: "Security Fundamentals" },
+      { name: "Cryptography Basics" },
+    ],
+  },
+  {
+    id: "tools",
+    name: "Tools & Environment",
+    description: "Developer tools, security scanners, and simulation software",
+    iconName: "Wrench",
+    skills: [
+      { name: "Git", highlight: true },
+      { name: "GitHub", highlight: true },
+      { name: "VS Code" },
+      { name: "Postman", highlight: true },
+      { name: "Wireshark", highlight: true },
+      { name: "Nmap", highlight: true },
+      { name: "Burp Suite Basics" },
+      { name: "Kali Linux", highlight: true },
+      { name: "Cisco Packet Tracer" },
+    ],
+  },
+];
+
+export const projects: Project[] = [
+  {
+    id: "securescope-ai",
+    title: "SecureScope AI",
+    tagline: "AI-Powered Security Assessment Platform",
+    description: "A comprehensive cybersecurity assessment platform engineered to identify security risks, assess technical findings, translate vulnerabilities into plain-English explanations, and generate actionable remediation roadmaps.",
+    category: "cybersecurity",
+    isFlagship: true,
+    highlightBadge: "Flagship Project",
+    tags: ["Cybersecurity", "FastAPI", "React", "Nmap", "Risk Assessment"],
+    techStack: ["React", "TypeScript", "Python", "FastAPI", "SQLite", "Nmap", "REST APIs"],
+    hasCaseStudy: true,
+    githubUrl: "https://github.com/bhavinsuryavanshi/securescope-ai",
+    demoUrl: "", // Available via demo mode in local/hosted instance
+    keyFeatures: [
+      "Security scanning workflows with demo and live scan endpoints",
+      "Intelligent rule-based risk assessment engine",
+      "Contextual vulnerability explanations and tailored remediation steps",
+      "Persistent scan history stored in SQLite with timestamped audits",
+      "Interactive analytics dashboard with risk severity categorization",
+      "Exportable CSV compliance and remediation reports"
+    ],
+    metrics: [
+      { label: "Scanner Integration", value: "Nmap Engine" },
+      { label: "Backend Latency", value: "< 120ms" },
+      { label: "Report Format", value: "CSV & JSON" },
+      { label: "Architecture", value: "Decoupled REST" },
+    ],
+  },
+  {
+    id: "researchhub-ai",
+    title: "ResearchHub AI",
+    tagline: "Intelligent Research Paper Management System",
+    description: "An Agentic AI platform built for academic research paper discovery, organization, high-dimensional vector search, contextual question answering, and multi-document synthesis.",
+    category: "ai",
+    highlightBadge: "Agentic AI",
+    tags: ["Agentic AI", "LLMs", "Vector Search", "FastAPI", "Llama 3.3"],
+    techStack: ["React", "TypeScript", "FastAPI", "Python", "Groq API", "Llama 3.3 70B", "Vector Embeddings"],
+    hasCaseStudy: false,
+    githubUrl: "https://github.com/bhavinsuryavanshi/researchhub-ai",
+    demoUrl: "",
+    keyFeatures: [
+      "AI-powered contextual multi-document question answering",
+      "Automated research paper summarization and key findings extraction",
+      "Semantic search powered by dense vector embeddings",
+      "Natural language document querying with citation tracing",
+      "High-throughput inference with Llama 3.3 70B powered by Groq API"
+    ],
+    metrics: [
+      { label: "Model Used", value: "Llama 3.3 70B" },
+      { label: "Inference Engine", value: "Groq LPU" },
+      { label: "Search Type", value: "Vector Similarity" },
+      { label: "Target Domain", value: "Academic Papers" },
+    ],
+  },
+  {
+    id: "saathi",
+    title: "Saathi",
+    tagline: "AI Mental Wellness Application | Smart India Hackathon 2025",
+    description: "An empathetic, accessible AI-powered mental wellness ecosystem custom-engineered for Indian students, providing vernacular conversational support, clinical screening, and confidential counselling access.",
+    category: "ai",
+    highlightBadge: "SIH 2025 Project",
+    tags: ["Hackathon", "LangGraph", "Django", "Sarvam AI", "Mental Health"],
+    techStack: ["React.js", "Django", "LangGraph", "Firebase", "LLaMA 3.2 3B", "Sarvam AI", "Python"],
+    hasCaseStudy: false,
+    githubUrl: "https://github.com/bhavinsuryavanshi/saathi-wellness",
+    demoUrl: "",
+    keyFeatures: [
+      "Culturally sensitive multilingual chatbot powered by Sarvam AI and LLaMA 3.2",
+      "Integrated standardized PHQ-9 and GAD-7 mental health screening tools",
+      "Anonymous counsellor appointment booking system protecting student privacy",
+      "End-to-end security and Firebase authentication",
+      "Institutional analytics dashboard showing anonymized wellness trends"
+    ],
+    metrics: [
+      { label: "Event", value: "SIH 2025" },
+      { label: "Agent Framework", value: "LangGraph" },
+      { label: "Speech & Indic NLP", value: "Sarvam AI" },
+      { label: "Privacy Model", value: "Zero-Knowledge Anon" },
+    ],
+  },
+  {
+    id: "quotes-bot",
+    title: "Quotes Recommendation Chatbot",
+    tagline: "Context-Aware Conversational Recommendation Bot",
+    description: "An intent-driven chatbot designed to interpret user emotional state and deliver uplifting, tailored inspirational recommendations via natural dialogue.",
+    category: "ai",
+    tags: ["NLP", "Rasa NLU", "React", "Python"],
+    techStack: ["Python", "Rasa NLU", "React.js", "JavaScript", "REST API"],
+    hasCaseStudy: false,
+    githubUrl: "https://github.com/bhavinsuryavanshi/quotes-recommendation-bot",
+    demoUrl: "",
+    keyFeatures: [
+      "Natural language understanding and intent classification with Rasa NLU",
+      "Custom conversational flows tailored to user sentiment",
+      "Interactive React client with seamless REST API message exchange"
+    ],
+  },
+  {
+    id: "plate-detection",
+    title: "Smart Number Plate Detection System",
+    tagline: "Computer Vision & Optical Character Recognition",
+    description: "An automated vehicle identification system utilizing image preprocessing, contour filtering, and OCR algorithms to accurately extract alphanumeric vehicle license plates.",
+    category: "fullstack",
+    tags: ["Computer Vision", "OpenCV", "Python", "OCR"],
+    techStack: ["Python", "OpenCV", "Image Processing", "OCR"],
+    hasCaseStudy: false,
+    githubUrl: "https://github.com/bhavinsuryavanshi/smart-number-plate-detection",
+    demoUrl: "",
+    keyFeatures: [
+      "Edge detection, morphological transformation, and license plate localization",
+      "High-accuracy optical character recognition (OCR) on segmented characters",
+      "Batch processing pipeline for stationary and video-streamed frames"
+    ],
+  },
+];
+
+export const certifications: Certification[] = [
+  {
+    id: "cisco-modern-ai",
+    title: "Introduction to Modern AI",
+    issuer: "Cisco Networking Academy",
+    date: "November 2025",
+    category: "AI",
+    skillsLearned: ["AI Architecture", "Machine Learning Concepts", "Neural Networks", "Modern AI Workflows"],
+    badgeIcon: "Cpu",
+    credentialUrl: "https://www.credly.com/organizations/cisco/badges",
+  },
+  {
+    id: "cisco-cyber-analyst",
+    title: "Junior Cybersecurity Analyst Career Path",
+    issuer: "Cisco Networking Academy",
+    date: "2025",
+    category: "Cybersecurity",
+    skillsLearned: ["Threat Detection", "Security Incident Handling", "Network Defense", "Endpoint Security"],
+    badgeIcon: "ShieldAlert",
+    credentialUrl: "https://www.credly.com/organizations/cisco/badges",
+  },
+  {
+    id: "cisco-cyber-essentials",
+    title: "Cybersecurity Essentials",
+    issuer: "Cisco Networking Academy",
+    date: "December 2025",
+    category: "Cybersecurity",
+    skillsLearned: ["Vulnerability Assessment", "Confidentiality & Integrity", "Cryptography", "Defense-in-Depth"],
+    badgeIcon: "Lock",
+    credentialUrl: "https://www.credly.com/organizations/cisco/badges",
+  },
+  {
+    id: "udemy-java-ai",
+    title: "Java Mastery: Beginner's Guide & Full-Stack AI Projects",
+    issuer: "Udemy",
+    date: "November 2025",
+    category: "FullStack",
+    skillsLearned: ["Core Java & OOP", "Data Structures", "Full-Stack Web Architectures", "AI API Integration"],
+    badgeIcon: "Code2",
+    credentialUrl: "https://www.udemy.com/certificate/",
+  },
+];
+
+export const githubProfileData = {
+  username: "bhavinsuryavanshi",
+  profileUrl: "https://github.com/bhavinsuryavanshi",
+  bio: "AI Engineer & Full-Stack Developer specializing in Generative AI, LangGraph, and Cybersecurity principles.",
+  location: "Bhopal, India",
+  publicReposCount: "5+",
+  languages: [
+    { name: "Python", percentage: "55%", color: "#3572A5" },
+    { name: "TypeScript", percentage: "25%", color: "#3178C6" },
+    { name: "JavaScript", percentage: "15%", color: "#F7DF1E" },
+    { name: "Java", percentage: "5%", color: "#B07219" },
+  ],
+  featuredRepos: [
+    {
+      name: "securescope-ai",
+      description: "AI-powered cybersecurity vulnerability scanner, risk engine, and remediation platform.",
+      language: "Python / React",
+      languageColor: "#3572A5",
+      url: "https://github.com/bhavinsuryavanshi/securescope-ai",
+      topics: ["cybersecurity", "fastapi", "react", "nmap", "risk-assessment"],
+    },
+    {
+      name: "researchhub-ai",
+      description: "Agentic research paper assistant with semantic vector search and Llama 3.3 70B.",
+      language: "TypeScript / Python",
+      languageColor: "#3178C6",
+      url: "https://github.com/bhavinsuryavanshi/researchhub-ai",
+      topics: ["agentic-ai", "rag", "vector-search", "groq", "llama3"],
+    },
+    {
+      name: "saathi-mental-wellness",
+      description: "Smart India Hackathon 2025 mental wellness platform with LangGraph and Sarvam AI.",
+      language: "Python / React",
+      languageColor: "#3572A5",
+      url: "https://github.com/bhavinsuryavanshi/saathi-wellness",
+      topics: ["sih-2025", "langgraph", "mental-health", "django", "firebase"],
+    },
+  ],
+};
