@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: bhavin-suryavanshi
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./out
+    branch: main
+    autoDeploy: true
